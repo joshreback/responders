@@ -1,9 +1,11 @@
 require 'action_controller'
 require 'responders/flash'
+require 'responders/http_cache'
 
 module Responders
   class AppResponder < ActionController::Responder
     include Flash
+    include HttpCache
   end
 end
 

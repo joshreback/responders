@@ -46,3 +46,28 @@ _Code path for API Requests_
 - Goal: Create a way to change default flash messages
   - Will use the i18n framework to set flash messages in YAML files, configure default values, and make it possible to translate such messages in the future.
 
+### HTTP Cache Responder
+
+Caching mechanism works as folllows:
+- Server returns a Last-Modified header to the response
+- Client adds an If-Modified-Since header with timestamp equal to the Last-Modified header
+- When server processes the subsequent request, if the resource has not changed it returns `304 Not Modified`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
