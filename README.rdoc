@@ -53,7 +53,25 @@ Caching mechanism works as folllows:
 - Client adds an If-Modified-Since header with timestamp equal to the Last-Modified header
 - When server processes the subsequent request, if the resource has not changed it returns `304 Not Modified`
 
+### Writing A Scaffold Controller Generator to use respond_with
 
+- The source path for a generator looks in the `lib/templates` directory before using the one Rails provides.
+  - Specifically, this should be available at: `lib/templates/rails/scaffold_controller/controller.rb`, Rails will use that file instead.
+(Skipped this section)
+
+- Rails also provides an abstraction called `orm_class` and `orm_instance` (inside Rails::Generators::ActiveModel) that tells the Rails scaffold generator how to interact with the underlying ORM
+- Any ORM can provide its own implementation of this class which is defined in the ORM generator namespace
+- Specifically, the class would be defined as
+'''
+module DataMapper
+  module Generators
+    class ActiveModel < ::Rails::Generators::ActiveModel
+      ...
+    end
+  end
+end
+'''
+- Thus, the Rails scaffold generators are agnostic about the underlying ORM
 
 
 
