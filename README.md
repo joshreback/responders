@@ -12,7 +12,7 @@
 
         | Navigational Request   | API Request                                  | Status
 --------|------------------------|-------------------------------------------------------
-GET     | render template        | render template or render resource.to_format |
+GET     | render template        | render template or render resource.to_format | (both)
 POST    | redirect_to resource   | render template or resource.to_format        | SUCCESS
 POST    | redirect_to resource   | render resource.errors                       | FAILURE
 PUT     | render :new            | head :no_content                             | SUCCESS
